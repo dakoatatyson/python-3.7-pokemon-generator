@@ -51,13 +51,13 @@ def print_pokemon(pokemon):
 
 #
 def print_party(party):
-    print(Style.RESET_ALL + "Your generated party is!!!..........")
+    print("Your generated party is!!!..........")
     for pokemon in party:
         print_pokemon(pokemon)
 
 #
 def generate_party(pokedex):
-    print(Style.RESET_ALL + "Generating party..........")
+    print("Generating party..........")
     party = []
 
     #
@@ -70,7 +70,7 @@ def generate_party(pokedex):
 
 #
 def load_pokemon():
-    print(Style.RESET_ALL + "Loading Pokemon..........")
+    print("Loading Pokemon..........")
     pokedex = []
 
     request = requests.get('https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json')
@@ -92,8 +92,9 @@ def main():
 
         print_party(party)
         
-        response = input(Style.RESET_ALL + "Press Y to generate a new team\nPress Any Key to Exit!")
-        if(response != "Y"):
+        print(Style.RESET_ALL, end="")
+        response = input("Press Y to generate a new team\nPress Any Key to Exit!")
+        if(response != "Y" or len(response) > 1):
             active = False
 
 main()
