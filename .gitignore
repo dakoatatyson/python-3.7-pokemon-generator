@@ -357,3 +357,8 @@ MigrationBackup/
 
 # vscode settings file
 .vscode
+
+# pyinstaller files
+build
+*.spec
+dist
